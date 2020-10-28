@@ -1,12 +1,17 @@
 @import 'settings/all';
 
 .card {
+	position: relative;
+	z-index: 2;
 	background-color: $background-surface;
 	border: 1px solid $border-default;
 	border-radius: 8px;
+	height: 100%;
+	transition: box-shadow 0.3s ease-in-out;
 
 	&:hover {
 		box-shadow: 0 0 microbe-rem(60) black;
+		z-index: 1;
 	}
 
 	&__top {
@@ -54,6 +59,7 @@
 	&__model {
 		font-weight: 700;
 		font-size: microbe-rem(16);
+		min-height: calc(18 / 16 * 16px * 2);
 	}
 
 	&__price {

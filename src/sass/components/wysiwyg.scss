@@ -3,6 +3,8 @@
 .wysiwyg {
 	font-size: microbe-rem(13);
 	color: $color-text-light;
+	position: relative;
+	z-index: 2;
 
 	h1 {
 		font-size: microbe-rem(20);
