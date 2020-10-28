@@ -1,4 +1,5 @@
 import { getSearchParams } from 'js#/modules/getSearchParams';
+import { renderCard } from 'js#/modules/renderCards';
 
 export const initialState = {
     params: {
@@ -20,7 +21,6 @@ export const handleFilterChange = ($containers) => {
     $containers.each(function () {
         const $container = $(this);
 
-        const cards = $('[data-card]');
 
         $(document).on('click', '[data-brand]', function () {
             $(this).find('input').each((index, item) => {
@@ -35,6 +35,7 @@ export const handleFilterChange = ($containers) => {
             })
             console.log(initialState);
             getSearchParams(initialState);
+            renderCard(initialState);
         });
 
         $(document).on('keyup mouseup', '[data-price]', function () {
@@ -45,6 +46,7 @@ export const handleFilterChange = ($containers) => {
             })
             console.log(initialState);
             getSearchParams(initialState);
+            renderCard(initialState);
         });
 
         const handleChangeFilterSelect = (filterElement, category) => {
@@ -59,6 +61,7 @@ export const handleFilterChange = ($containers) => {
                 })
                 console.log(initialState);
                 getSearchParams(initialState);
+                renderCard(initialState);
             });
         };
 
