@@ -1,18 +1,21 @@
-export const handleFilterChange = ($containers) => {
-    const initialState = {
-        params: {
-            brand: [],
-            manufacturer: '',
-            model: '',
-            year: '',
-            price: [],
-        },
-        pagination: {
-            sort: '',
-            perPage: 6,
-            page: 1
-        }
+import { getSearchParams } from 'js#/modules/getSearchParams';
+
+export const initialState = {
+    params: {
+        brand: [],
+        manufacturer: '',
+        model: '',
+        year: '',
+        price: [],
+    },
+    pagination: {
+        sort: '',
+        perPage: 6,
+        page: 1
     }
+}
+
+export const handleFilterChange = ($containers) => {
 
     $containers.each(function () {
         const $container = $(this);
@@ -20,32 +23,33 @@ export const handleFilterChange = ($containers) => {
         const cards = $('[data-card]');
 
         $(document).on('click', '[data-brand]', function () {
-            const inputs = $(this).find('input');
-            inputs.each((index, item) => {
-                const brandName = $(item).next().text();
+            $(this).find('input').each((index, item) => {
+                const brandName = $(item).val();
                 if ($(item).is(':checked') && initialState.params.brand.indexOf(brandName) === -1) {
                     initialState.params.brand.push(brandName);
 				} else {
-					initialState.params.brand = initialState.params.brand.filter((brand) => brand !== brandName);
+						initialState.params.brand = initialState.params.brand.filter(
+							(brand) => brand !== brandName
+						);
                 }
             })
-            console.log(initialState)
+            console.log(initialState);
+            getSearchParams(initialState);
         });
 
         $(document).on('keyup mouseup', '[data-price]', function () {
-            const inputs = $(this).find('input');
-            inputs.each((index, item) => {
+            $(this).find('input').each((index, item) => {
                 const valuePriceFrom = $(this).find('#price-from').val();
                 const valuePriceTo = $(this).find('#price-to').val();
                 initialState.params.price = [valuePriceFrom, valuePriceTo];
             })
-            console.log(initialState)
+            console.log(initialState);
+            getSearchParams(initialState);
         });
 
         const handleChangeFilterSelect = (filterElement, category) => {
             $(document).on('change', `[data-${filterElement}]`, function () {
-                const select = $(this).find('select');
-                select.each((index, item) => {
+                $(this).find('select').each((index, item) => {
                     const selectValue = $(item).val();
                     if (typeof +selectValue === 'number') {
                         initialState[category][filterElement] = selectValue;
@@ -53,7 +57,8 @@ export const handleFilterChange = ($containers) => {
                         initialState[category][filterElement] = '';
                     }
                 })
-                console.log(initialState)
+                console.log(initialState);
+                getSearchParams(initialState);
             });
         };
 
