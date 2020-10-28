@@ -19,5 +19,6 @@ export const getSearchParams = () => {
         }
         console.log(urlParams.join('&'));
         history.pushState({}, '', urlParams.join('&'));
+
     }
 }
