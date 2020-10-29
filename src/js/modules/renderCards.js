@@ -1,42 +1,57 @@
 import goods from 'js#/data/goods';
-import { initialState } from 'js#/modules/handleFilterChange';
+import { state } from 'js#/modules/handleFilterChange';
 
-export const renderCard = (state) => {
-    const dataCard = $('[data-card]');
+export const renderCard = () => {
+	const dataCards = $('[data-card]');
 
-    const result = goods.slice(0, initialState.pagination.perPage * initialState.pagination.page)
-        .filter(item => {
-            const buff = [];
+	const perPage = state.pagination['per-page'] ? state.pagination['per-page'] * 6 : 6;
+	console.log(state.pagination['per-page']);
+	const result = goods
+		.slice(0, perPage)
+		.filter((item) => {
+			const buff = [];
 
-            if (initialState.params.brand.length) {
-                buff.push(initialState.params.brand.includes(`${item.brand.id}`));
-            }
+			if (state.params.brand.length) {
+				buff.push(state.params.brand.includes(`${item.brand.id}`));
+			}
 
-            if (initialState.params.manufacturer) {
-                buff.push(initialState.params.manufacturer.includes(`${item.manufacturer.id}`));
-            }
+			if (state.params.manufacturer) {
+				buff.push(state.params.manufacturer.includes(`${item.manufacturer.id}`));
+			}
 
-            if (initialState.params.model) {
-                buff.push(initialState.params.model.includes(`${item.model.id}`));
-            }
+			if (state.params.model) {
+				buff.push(state.params.model.includes(`${item.model.id}`));
+			}
 
-            if (initialState.params.price.length) {
-                buff.push(initialState.params.price[0] <= item.price.value && initialState.params.price[1] >= item.price.value);
-            }
+			if (state.params.price.length) {
+				buff.push(
+					state.params.price[0] <= item.price.value &&
+						state.params.price[1] >= item.price.value
+				);
+			}
 
-            console.log(buff, 'buff')
-            console.log(initialState.params, 'initialState')
-                return buff.every(Boolean)
-        } )
-
-        //
-        // .filter(item => !!initialState.params.manufacturer ? initialState.params.manufacturer.includes(`${item.manufacturer.id}`) : true)
-        // .filter(item => !!initialState.params.model ? initialState.params.model.includes(`${item.model.id}`) : true)
-        // .filter(item => !!initialState.params.year ? initialState.params.year.includes(`${item.year}`) : true)
-        // .filter(item => !!initialState.params.price.length ? initialState.params.price > item.price.value  : true)
-
-        .map((item, index) => (
-        ` <div class="_cell _cell--12 _sm:cell--6 _lg:cell--4">
+			console.log(state.params, 'state');
+			return buff.every(Boolean);
+		})
+		.sort((a, b) => {
+			if (state.pagination.sort) {
+				switch (state.pagination.sort) {
+					case '1':
+						return parseFloat(a.price.value) - parseFloat(b.price.value);
+					case '2':
+						return parseFloat(b.price.value) - parseFloat(a.price.value);
+					case '3':
+						return parseFloat(a.year) - parseFloat(b.year);
+					case '4':
+						return parseFloat(b.year) - parseFloat(a.year);
+					default:
+						return 0;
+				}
+			}
+		})
+		.map(
+			(item, index) =>
+				` <div class="_cell _cell--12 _sm:cell--6 _lg:cell--4">
             <div class="card">
                 <div class="card__top">
                     <div class="card__brand">${item.brand.name}</div>
@@ -67,10 +82,9 @@ export const renderCard = (state) => {
             </div>
         </div>
     </div>`
-    ))
+		);
 
-
-    console.log(initialState.params.brand)
-    console.log(goods)
-    dataCard.html(result)
-}
+	console.log(state.params.brand);
+	console.log(goods);
+	dataCards.html(result);
+};

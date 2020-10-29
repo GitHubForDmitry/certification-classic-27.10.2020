@@ -12,4 +12,9 @@
 		font-style: italic;
 		margin-bottom: microbe-em(8, 16);
 	}
+
+	& .select,
+	& input {
+		transition: background-color 0.3s ease-in-out;
+	}
 }
