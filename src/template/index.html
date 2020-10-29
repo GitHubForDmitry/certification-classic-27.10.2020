@@ -24,15 +24,27 @@
 									<div class="filter-set__name">Бренд</div>
 									<div class="filter-set__controls">
 										<label class="filter-label">
-											<input type="checkbox" name="brand" value="1" />
+											<input
+												type="checkbox"
+												name="brand"
+												value="1"
+											/>
 											<span>ELIGOR</span>
 										</label>
 										<label class="filter-label">
-											<input type="checkbox" name="brand" value="2" />
+											<input
+												type="checkbox"
+												name="brand"
+												value="2"
+											/>
 											<span>MSMODELS</span>
 										</label>
 										<label class="filter-label">
-											<input type="checkbox" name="brand" value="3" />
+											<input
+												type="checkbox"
+												name="brand"
+												value="3"
+											/>
 											<span>SCHUCO</span>
 										</label>
 									</div>
@@ -185,64 +197,92 @@
 					<div class="_cell _cell--12 _md:cell--8 _df:cell--9">
 						<div class="_owl _owl--df">
 							<div class="filter-sort">
-								<div class="_grid _grid--auto _spacer _spacer--md _justify-end">
-								<div class="_cell--12 _sm:cell--6 _md:cell--auto">
-									<div class="_owl _owl--xs" data-sort>
-										<label for="sort">
-											<small>Сортировать:</small>
-										</label>
-										<select
-											id="sort"
-											name="sort"
-											class="select"
-											form="filter"
-										>
-											<option value="1">От дешевых к дорогим</option>
-											<option value="2">От дорогих к дешевым</option>
-											<option value="3">От старых к новым</option>
-											<option value="4">От новых к старым</option>
-										</select>
+								<div
+									class="_grid _grid--auto _spacer _spacer--md _justify-end"
+								>
+									<div class="_cell--12 _sm:cell--6 _md:cell--auto">
+										<div class="_owl _owl--xs" data-sort>
+											<label for="sort">
+												<small>Сортировать:</small>
+											</label>
+											<select
+												id="sort"
+												name="sort"
+												class="select"
+												form="filter"
+											>
+												<option value="1"
+													>От дешевых к дорогим</option
+												>
+												<option value="2"
+													>От дорогих к дешевым</option
+												>
+												<option value="3"
+													>От старых к новым</option
+												>
+												<option value="4"
+													>От новых к старым</option
+												>
+											</select>
+										</div>
+									</div>
+									<div
+										class="_cell--12 _sm:cell--6 _md:cell--auto"
+										data-per-page
+									>
+										<div class="_owl _owl--xs">
+											<label for="per_page">
+												<small
+													>Кол-во элементов на страницу:</small
+												>
+											</label>
+											<select
+												id="per_page"
+												name="per_page"
+												class="select"
+												form="filter"
+											>
+												<option value="1">6</option>
+												<option value="2">12</option>
+												<option value="3">24</option>
+												<option value="4">60</option>
+											</select>
+										</div>
 									</div>
 								</div>
-								<div class="_cell--12 _sm:cell--6 _md:cell--auto" data-per-page >
-									<div class="_owl _owl--xs">
-										<label for="per_page">
-											<small>Кол-во элементов на страницу:</small>
-										</label>
-										<select
-											id="per_page"
-											name="per_page"
-											class="select"
-											form="filter"
-										>
-											<option value="1">6</option>
-											<option value="2">12</option>
-											<option value="3">24</option>
-											<option value="4">60</option>
-										</select>
-									</div>
-								</div>
 							</div>
-							</div>
-							<div class="_grid _spacer _spacer--lg" data-card>
-
-							</div>
+							<div class="_grid _spacer _spacer--lg" data-card></div>
 						</div>
 					</div>
 					<div class="_cell _cell--12">
 						<ul class="pagination" role="navigation">
-
 							<li class="pagination__item">
-								<a class="pagination__number" href="#" rel="prev"
-								   aria-label="@lang('cms-core::admin.layout.pagination.previous')">&lsaquo;</a>
+								<a
+									class="pagination__number"
+									href="#"
+									rel="prev"
+									aria-label="@lang('cms-core::admin.layout.pagination.previous')"
+									>&lsaquo;</a
+								>
 							</li>
 
-							<li class="pagination__item active" aria-disabled="true"><span class="pagination__number">1</span></li>
-							<li class="pagination__item" aria-current="page"><a href="#" class="pagination__number">2</a></li>
-							<li class="pagination__item"><a class="pagination__number" href="#">3</a></li>
+							<li class="pagination__item active" aria-disabled="true">
+								<span class="pagination__number">1</span>
+							</li>
+							<li class="pagination__item" aria-current="page">
+								<a href="#" class="pagination__number">2</a>
+							</li>
 							<li class="pagination__item">
-								<a class="pagination__number" href="#" rel="next"
-								   aria-label="">&rsaquo;</a>
+								<a class="pagination__number" href="#">3</a>
+							</li>
+							<li class="pagination__item">
+								<a
+									class="pagination__number"
+									href="#"
+									rel="next"
+									aria-label=""
+									>&rsaquo;</a
+								>
 							</li>
 						</ul>
 					</div>
@@ -250,16 +290,31 @@
 			</div>
 		</div>
 		<div class="section section--white">
-			<img class="section__decor" src="images/car.svg" alt="car">
+			<img class="section__decor" src="images/car.svg" alt="car" />
 			<div class="container">
 				<div class="wysiwyg">
 					<h1>Lorem ipsum dolor sit amet.</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur est et ex excepturi fugit illo incidunt, laborum minima molestias nostrum numquam, quis rem sed, soluta vero voluptatum? Distinctio enim ex facilis laboriosam magnam modi, nam natus odio placeat quae, quaerat quam recusandae veritatis. Deleniti inventore quia sapiente voluptate voluptatibus?</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, perferendis!</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat necessitatibus sequi tempore tenetur ut vel! Error magni nostrum soluta suscipit temporibus tenetur. A adipisci autem dolores hic illo magnam nemo nihil nisi non, porro quisquam ratione repellat voluptas? Labore, tempora?</p>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
+						aspernatur est et ex excepturi fugit illo incidunt, laborum minima
+						molestias nostrum numquam, quis rem sed, soluta vero voluptatum?
+						Distinctio enim ex facilis laboriosam magnam modi, nam natus odio
+						placeat quae, quaerat quam recusandae veritatis. Deleniti
+						inventore quia sapiente voluptate voluptatibus?
+					</p>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum,
+						perferendis!
+					</p>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat
+						necessitatibus sequi tempore tenetur ut vel! Error magni nostrum
+						soluta suscipit temporibus tenetur. A adipisci autem dolores hic
+						illo magnam nemo nihil nisi non, porro quisquam ratione repellat
+						voluptas? Labore, tempora?
+					</p>
 				</div>
 			</div>
 		</div>
-
 	</body>
 </html>

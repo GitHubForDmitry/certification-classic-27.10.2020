@@ -18,7 +18,6 @@ export const state = {
 
 export const handleFilterChange = ($containers) => {
 	$containers.each(function () {
-
 		$(document).on('click', '[data-brand]', function () {
 			$(this)
 				.find('input')
