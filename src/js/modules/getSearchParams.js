@@ -12,7 +12,7 @@ export const getSearchParams = () => {
 		: 'price-from=&price-to=';
 	const page = `?page${state.pagination.page}`;
 	const sort = `sort=${state.pagination.sort}`;
-	const perPage = `per_page=${state.pagination['per-page']}`;
+	const perPage = `per_page=${state.pagination.perPage}`;
 	let urlParams;
 	const searchParams = [page, year, price, model, manufacturer, brand, sort, perPage];
 
