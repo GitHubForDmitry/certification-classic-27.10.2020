@@ -11,7 +11,7 @@ export const state = {
 	},
 	pagination: {
 		sort: '',
-		'per-page': 0,
+		'per-page': 1,
 		page: 1
 	}
 };
