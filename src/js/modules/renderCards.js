@@ -5,7 +5,6 @@ export const renderCard = () => {
 	const dataCards = $('[data-card]');
 
 	const perPage = state.pagination['per-page'] ? state.pagination['per-page'] * 6 : 6;
-	console.log(state.pagination['per-page']);
 	const result = goods
 		.slice(0, perPage)
 		.filter((item) => {
@@ -30,7 +29,6 @@ export const renderCard = () => {
 				);
 			}
 
-			console.log(state.params, 'state');
 			return buff.every(Boolean);
 		})
 		.sort((a, b) => {
@@ -84,7 +82,5 @@ export const renderCard = () => {
     </div>`
 		);
 
-	console.log(state.params.brand);
-	console.log(goods);
 	dataCards.html(result);
 };
