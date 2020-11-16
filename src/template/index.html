@@ -251,7 +251,44 @@
 									</div>
 								</div>
 							</div>
-							<div class="_grid _spacer _spacer--lg" data-card></div>
+							<script>
+								window.templateCard = `
+								\t\t\t\t\t\t\t\t<div class="_cell _cell--12 _sm:cell--6 _lg:cell--4">
+\t\t\t\t\t\t\t\t\t<div class="card">
+\t\t\t\t\t\t\t\t\t\t<div class="card__top">
+\t\t\t\t\t\t\t\t\t\t\t<div class="card__brand">%brandName%</div>
+\t\t\t\t\t\t\t\t\t\t\t<img src="%cardPreview%"
+\t\t\t\t\t\t\t\t\t\t\t\t alt="%alt%"
+\t\t\t\t\t\t\t\t\t\t\t\t class="card__image"
+\t\t\t\t\t\t\t\t\t\t\t/>
+\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t<div class="card__\`bottom">
+\t\t\t\t\t\t\t\t\t\t\t<div class="_grid _justify-between _flex-nowrap _mb-sm">
+\t\t\t\t\t\t\t\t\t\t\t\t<div class="_gcell">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<div class="card__\`manufacturer">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t%marka%
+\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t<div class="_gcell">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<div class="card__year">%year%</div>
+\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t<div class="card__model _mb-sm">
+\t\t\t\t\t\t\t\t\t\t\t\t%modelName%
+\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t<div class="_grid _justify-center">
+\t\t\t\t\t\t\t\t\t\t\t\t<div class="_gcell">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<div class="card__price">%symbol% %priceValue%</div>
+\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</div>
+
+								`
+							</script>
+							<div class="_grid _spacer _spacer--lg" data-card>
+							</div>
 						</div>
 					</div>
 					<div class="_cell _cell--12">
