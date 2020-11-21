@@ -7,6 +7,7 @@
 			content="width=device-width,minimum-scale=1,initial-scale=1,viewport-fit=cover"
 		/>
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico">
 		<title><%= htmlWebpackPlugin.options.title %></title>
 	</head>
 	<body>
@@ -16,7 +17,7 @@
 		<div class="section">
 			<div class="container">
 				<div class="_grid _spacer _spacer--lg">
-					<div class="_cell _cell--12 _md:cell--4 _df:cell--3">
+					<div class="_cell _cell--12 _md:cell--4 _df:cell--3 _cell-order-md-1">
 						<div class="filter">
 							<h2 class="filter__title">Категории</h2>
 							<form id="filter" class="_owl _owl--df" data-filter>
@@ -51,10 +52,10 @@
 								</div>
 								<div class="filter-set" data-manufacturer>
 									<div class="filter-set__name">
-										<label for="marka">Производитель</label>
+										<label for="manufacture">Производитель</label>
 									</div>
 									<div class="filter-set__controls">
-										<select id="marka" name="marka" class="select">
+										<select id="manufacture" name="manufacture" class="select">
 											<option value="">Выбрать</option>
 											<option value="1">Наш автопром</option>
 											<option value="2">V43</option>
@@ -194,7 +195,7 @@
 							</form>
 						</div>
 					</div>
-					<div class="_cell _cell--12 _md:cell--8 _df:cell--9">
+					<div class="_cell _cell--12 _md:cell--8 _df:cell--9 _cell-order-md-0">
 						<div class="_owl _owl--df">
 							<div class="filter-sort">
 								<div
@@ -251,47 +252,12 @@
 									</div>
 								</div>
 							</div>
-							<script>
-								window.templateCard = `
-								\t\t\t\t\t\t\t\t<div class="_cell _cell--12 _sm:cell--6 _lg:cell--4">
-\t\t\t\t\t\t\t\t\t<div class="card">
-\t\t\t\t\t\t\t\t\t\t<div class="card__top">
-\t\t\t\t\t\t\t\t\t\t\t<div class="card__brand">%brandName%</div>
-\t\t\t\t\t\t\t\t\t\t\t<img src="%cardPreview%"
-\t\t\t\t\t\t\t\t\t\t\t\t alt="%alt%"
-\t\t\t\t\t\t\t\t\t\t\t\t class="card__image"
-\t\t\t\t\t\t\t\t\t\t\t/>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t<div class="card__\`bottom">
-\t\t\t\t\t\t\t\t\t\t\t<div class="_grid _justify-between _flex-nowrap _mb-sm">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class="_gcell">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<div class="card__\`manufacturer">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t%marka%
-\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t<div class="_gcell">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<div class="card__year">%year%</div>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class="card__model _mb-sm">
-\t\t\t\t\t\t\t\t\t\t\t\t%modelName%
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class="_grid _justify-center">
-\t\t\t\t\t\t\t\t\t\t\t\t<div class="_gcell">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<div class="card__price">%symbol% %priceValue%</div>
-\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</div>
 
-								`
-							</script>
-							<div class="_grid _spacer _spacer--lg" data-card>
+							<div class="_grid _spacer _spacer--xs _md:spacer--lg" data-card>
 							</div>
 						</div>
 					</div>
-					<div class="_cell _cell--12">
+					<div class="_cell _cell--12 _cell-order-1">
 						<ul class="pagination" role="navigation">
 							<li class="pagination__item">
 								<a
@@ -353,5 +319,39 @@
 				</div>
 			</div>
 		</div>
+		<script>
+
+			window.templateCard = `
+								<div class="_cell _cell--6 _lg:cell--4">
+									<div class="card">
+										<div class="card__top">
+											<div class="card__brand">%brandName%</div>
+												<img src="%cardPreview%"
+												 alt="%alt%"
+												 class="card__image"
+												/>
+											</div>
+										<div class="card__bottom">
+											<div class="_grid _justify-between _flex-nowrap _mb-sm">
+												<div class="_gcell">
+													<div class="card__manufacturer">
+														%manufacture%
+													</div>
+												</div>
+												<div class="_gcell">
+													<div class="card__year">%year%</div>
+												</div>
+											</div>
+											<div class="card__model _mb-sm">%modelName%</div>
+										<div class="_grid _justify-center">
+											<div class="_gcell">
+												<div class="card__price">%symbol% %priceValue%</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+								`
+		</script>
 	</body>
 </html>

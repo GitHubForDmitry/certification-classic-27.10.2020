@@ -1,0 +1,13 @@
+@for $i from 0 through 3 {
+  ._cell-order-#{$i} {
+      order: $i;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  @for $i from 0 through 3 {
+    ._cell-order-md-#{$i} {
+      order: $i;
+    }
+  }
+}
