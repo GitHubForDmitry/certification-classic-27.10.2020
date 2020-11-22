@@ -258,8 +258,8 @@
 						</div>
 					</div>
 					<div class="_cell _cell--12 _cell-order-1">
-						<ul class="pagination" role="navigation">
-							<li class="pagination__item">
+						<ul class="pagination" role="navigation" data-pagination>
+							<li class="pagination__item" data-pagination-prev>
 								<a
 									class="pagination__number"
 									href="#"
@@ -268,17 +268,13 @@
 									>&lsaquo;</a
 								>
 							</li>
-
-							<li class="pagination__item active" aria-disabled="true">
-								<span class="pagination__number">1</span>
+<!--							<li class="pagination__item active" aria-disabled="true" data-pagination-item>-->
+<!--								<span class="pagination__number" data-pagination-number>1</span>-->
+<!--							</li>-->
+							<li class="pagination__item" aria-current="page" data-pagination-item>
+								<a href="#" class="pagination__number" data-pagination-number></a>
 							</li>
-							<li class="pagination__item" aria-current="page">
-								<a href="#" class="pagination__number">2</a>
-							</li>
-							<li class="pagination__item">
-								<a class="pagination__number" href="#">3</a>
-							</li>
-							<li class="pagination__item">
+							<li class="pagination__item" data-pagination-next>
 								<a
 									class="pagination__number"
 									href="#"

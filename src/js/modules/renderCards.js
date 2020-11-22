@@ -1,12 +1,11 @@
-import goods from 'js#/data/goods';
+
 import { state } from 'js#/modules/handleFilterChange';
+import { paginationRender } from 'js#/modules/pagination';
 
 export const renderCard = () => {
 	const dataCards = $('[data-card]');
-
-	const perPage = state.pagination['per-page'] ? state.pagination['per-page'] * 6 : 6;
-	const result = goods
-		.slice(0, perPage)
+	const currentPagination = paginationRender();
+	const result = currentPagination
 		.filter((item) => {
 			const buff = [];
 
