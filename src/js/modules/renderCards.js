@@ -2,9 +2,9 @@
 import { state } from 'js#/modules/handleFilterChange';
 import { paginationRender } from 'js#/modules/pagination';
 
-export const renderCard = () => {
+export const renderCard = (startPage = 0) => {
 	const dataCards = $('[data-card]');
-	const currentPagination = paginationRender();
+	const currentPagination = paginationRender(startPage);
 	const result = currentPagination
 		.filter((item) => {
 			const buff = [];
